@@ -7,7 +7,7 @@ for every status that the machine will have... so you should initialize this one
 then, you should set the rules with set_condition().
 
 set_condition():
-    Accepts char[ n -> (n/3) == status quantity] 
+    Accepts char[ n -> (n/3) == statuses quantity] 
     or std::string (Setted as String on the code, it could be changed to String^ w nmspc System)
     
 Writted by fuzz
