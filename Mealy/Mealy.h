@@ -14,9 +14,6 @@ namespace mealy {
 			this->symbols[0][1] = _action;
 			this->symbols[0][2] = _goes_to;
 		}
-		void g_status(int _number = 0) {
-			this->number_status = _number;
-		}
 	};
 
 	class mealy {
@@ -40,9 +37,7 @@ namespace mealy {
 			else{
 				int index_increase = 0;
 				for (int C = 0; C <= this->q_states.size(); C++) {
-					q_states[C].symbols[0][0 + index_increase] = _condition[0 + index_increase];
-					q_states[C].symbols[0][1 + index_increase] = _condition[1 + index_increase];
-					q_states[C].symbols[0][2 + index_increase] = _condition[2 + index_increase];
+					q_states[C].s_symbol(_condition[0 + index_increase], _condition[1 + index_increase], _condition[2 + index_increase]);
 					if (index_increase == 0) {
 						index_increase += 4;
 					}
