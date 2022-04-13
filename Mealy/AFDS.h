@@ -111,15 +111,15 @@ namespace AFND {
 				String translate(String _word) {
 					for (int c = 0; c < _word.size(); c++) {
 						switch (this->q_status[a_status].ToString()[0] == _word[c]) {
-						case true:
-							this->word = this->word + this->q_status[a_status].ToString()[1];
-							this->update(_word[c]);
+							case true:
+								this->word = this->word + this->q_status[a_status].ToString()[1];
+								this->update(_word[c]);
 							
-								break;
-							default:
-								break;
+									break;
+								default:
+									break;
+							}
 						}
-					}
 					return this->word;
 				}
 	};
