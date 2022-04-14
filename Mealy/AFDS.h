@@ -88,9 +88,11 @@ namespace AFND {
 		private: int update(char _symbol) {
 					for (int c = 0; c <= q_status.size()-1; c++) {
 						if (ToInt(this->q_status[a_status].ToString()[2]) == this->q_status[c].code) {
-							// if you want a log //std::cout << "ACTUAL STATUS CHANGED FROM " << this->q_status[a_status].code;
+							// if you want a log //
+							std::cout << "ACTUAL STATUS CHANGED FROM " << this->q_status[a_status].code;
 							a_status = c;
-							// if you want a log //std::cout << " TO " << this->q_status[a_status].code << "\n";
+							// if you want a log //
+							std::cout << " TO " << this->q_status[a_status].code << "\n";
 							return c;
 						}
 						else {
@@ -128,11 +130,13 @@ namespace AFND {
 	Mealy::Mealy(int _q_states_n, bool _a_state, int _new_status = 0) {
 
 		switch (_a_state) {
-		case true:
-			this->a_status = rand();
-		case false:
-			this->a_status = _new_status;
-		}
+			case true:
+				this->a_status = rand()%_q_states_n;
+				break;
+			case false:
+				this->a_status = _new_status;
+				break;
+			}
 		this->set_states(_q_states_n);
 
 	}
